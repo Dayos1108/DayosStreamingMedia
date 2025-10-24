@@ -1,0 +1,2073 @@
+<!doctype html>
+<html lang="es" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>StreamLicenses Pro Enhanced - Plataformas Premium</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #3b82f6;
+            --secondary: #8b5cf6;
+            --accent: #06b6d4;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --surface: #ffffff;
+            --background: #f8fafc;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --radius: 12px;
+            --radius-lg: 16px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            overflow-x: hidden;
+            height: 100%;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-overflow-scrolling: touch;
+            overflow-x: hidden;
+            width: 100%;
+            min-height: 100vh;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        .gradient-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        .gradient-accent {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--success) 100%);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .card {
+            background: var(--surface);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--surface);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover:not(:disabled) {
+            background: #f1f5f9;
+            border-color: var(--primary);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
+            color: white;
+        }
+
+        .btn-accent {
+            background: linear-gradient(135deg, var(--accent) 0%, #0891b2 100%);
+            color: white;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 0.875rem;
+            transition: var(--transition);
+            background: var(--surface);
+            color: var(--text);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .form-input:read-only {
+            background: #f9fafb;
+            cursor: not-allowed;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .nav {
+            background: #ffffff;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .nav-link {
+            color: var(--text-muted);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius);
+            transition: var(--transition);
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        .admin-nav-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .admin-nav-btn.active:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .product-card {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+        }
+
+        .product-icon {
+            width: 4rem;
+            height: 4rem;
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-display {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--success);
+            margin: 1rem 0;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.375rem 0.875rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            gap: 0.25rem;
+        }
+
+        .badge-success {
+            background: rgba(16, 185, 129, 0.1);
+            color: #065f46;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .modal-backdrop {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+
+        .modal-content {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .grid-modern {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .toast {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1000;
+            transform: translateX(100%);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            max-width: 400px;
+            min-width: 300px;
+            display: none;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .confirmation-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+        }
+
+        .confirmation-dialog {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Utility classes */
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+        .justify-between { justify-content: space-between; }
+        .gap-2 { gap: 0.5rem; }
+        .gap-3 { gap: 0.75rem; }
+        .gap-4 { gap: 1rem; }
+        .gap-6 { gap: 1.5rem; }
+        .gap-8 { gap: 2rem; }
+        .space-x-2 > * + * { margin-left: 0.5rem; }
+        .space-x-4 > * + * { margin-left: 1rem; }
+        .space-y-4 > * + * { margin-top: 1rem; }
+        .space-y-6 > * + * { margin-top: 1.5rem; }
+        .grid { display: grid; }
+        .grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+        .hidden { display: none; }
+        .w-5 { width: 1.25rem; }
+        .w-6 { width: 1.5rem; }
+        .w-8 { width: 2rem; }
+        .w-12 { width: 3rem; }
+        .w-14 { width: 3.5rem; }
+        .w-16 { width: 4rem; }
+        .w-20 { width: 5rem; }
+        .w-24 { width: 6rem; }
+        .w-full { width: 100%; }
+        .h-5 { height: 1.25rem; }
+        .h-6 { height: 1.5rem; }
+        .h-8 { height: 2rem; }
+        .h-12 { height: 3rem; }
+        .h-14 { height: 3.5rem; }
+        .h-16 { height: 4rem; }
+        .h-20 { height: 5rem; }
+        .h-24 { height: 6rem; }
+        .h-full { height: 100%; }
+        .max-w-lg { max-width: 32rem; }
+        .max-w-2xl { max-width: 42rem; }
+        .max-w-3xl { max-width: 48rem; }
+        .max-w-4xl { max-width: 56rem; }
+        .max-w-6xl { max-width: 72rem; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mb-12 { margin-bottom: 3rem; }
+        .mb-16 { margin-bottom: 4rem; }
+        .mt-4 { margin-top: 1rem; }
+        .p-2 { padding: 0.5rem; }
+        .p-3 { padding: 0.75rem; }
+        .p-4 { padding: 1rem; }
+        .p-6 { padding: 1.5rem; }
+        .p-8 { padding: 2rem; }
+        .p-12 { padding: 3rem; }
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+        .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+        .pt-4 { padding-top: 1rem; }
+        .pt-6 { padding-top: 1.5rem; }
+        .pt-8 { padding-top: 2rem; }
+        .text-xs { font-size: 0.75rem; }
+        .text-sm { font-size: 0.875rem; }
+        .text-base { font-size: 1rem; }
+        .text-lg { font-size: 1.125rem; }
+        .text-xl { font-size: 1.25rem; }
+        .text-2xl { font-size: 1.5rem; }
+        .text-3xl { font-size: 1.875rem; }
+        .text-4xl { font-size: 2.25rem; }
+        .text-6xl { font-size: 3.75rem; }
+        .font-medium { font-weight: 500; }
+        .font-semibold { font-weight: 600; }
+        .font-bold { font-weight: 700; }
+        .font-black { font-weight: 900; }
+        .text-center { text-align: center; }
+        .text-right { text-align: right; }
+        .text-white { color: #ffffff; }
+        .text-gray-400 { color: #9ca3af; }
+        .text-gray-500 { color: #6b7280; }
+        .text-gray-600 { color: #4b5563; }
+        .text-gray-700 { color: #374151; }
+        .text-gray-800 { color: #1f2937; }
+        .text-blue-600 { color: #2563eb; }
+        .text-blue-900 { color: #1e3a8a; }
+        .text-green-600 { color: #16a34a; }
+        .text-red-500 { color: #ef4444; }
+        .text-red-600 { color: #dc2626; }
+        .bg-gray-50 { background-color: #f9fafb; }
+        .bg-gray-100 { background-color: #f3f4f6; }
+        .bg-green-500 { background-color: #22c55e; }
+        .bg-red-500 { background-color: #ef4444; }
+        .border { border-width: 1px; }
+        .border-t { border-top-width: 1px; }
+        .border-gray-200 { border-color: #e5e7eb; }
+        .border-white { border-color: #ffffff; }
+        .border-opacity-20 { border-opacity: 0.2; }
+        .rounded-lg { border-radius: 0.5rem; }
+        .rounded-xl { border-radius: 0.75rem; }
+        .rounded-2xl { border-radius: 1rem; }
+        .rounded-full { border-radius: 9999px; }
+        .shadow-lg { box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1); }
+        .hover\:bg-gray-100:hover { background-color: #f3f4f6; }
+        .hover\:text-gray-600:hover { color: #4b5563; }
+        .transition-colors { transition-property: color, background-color, border-color; }
+        .cursor-pointer { cursor: pointer; }
+        .cursor-not-allowed { cursor: not-allowed; }
+        .overflow-hidden { overflow: hidden; }
+        .overflow-y-auto { overflow-y: auto; }
+        .fixed { position: fixed; }
+        .absolute { position: absolute; }
+        .relative { position: relative; }
+        .sticky { position: sticky; }
+        .inset-0 { top: 0px; right: 0px; bottom: 0px; left: 0px; }
+        .top-0 { top: 0px; }
+        .right-0 { right: 0px; }
+        .z-10 { z-index: 10; }
+        .z-50 { z-index: 50; }
+        .opacity-80 { opacity: 0.8; }
+        .opacity-90 { opacity: 0.9; }
+
+        @media (max-width: 768px) {
+            .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+            .md\:flex { display: flex; }
+            .md\:flex-row { flex-direction: row; }
+            .md\:text-4xl { font-size: 2.25rem; }
+            .md\:text-6xl { font-size: 3.75rem; }
+            .md\:text-2xl { font-size: 1.5rem; }
+            .grid-modern {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+            .product-card {
+                padding: 1.75rem;
+            }
+            .container {
+                padding: 0 1rem;
+            }
+            .section {
+                padding: 2.5rem 0;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .sm\:flex-row { flex-direction: row; }
+            .sm\:text-left { text-align: left; }
+            .container {
+                padding: 0 0.75rem;
+            }
+            .product-card {
+                padding: 1.5rem;
+            }
+            .section {
+                padding: 2rem 0;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body class="h-full"><!-- Navigation -->
+  <header class="nav">
+   <nav class="container py-4">
+    <div class="flex items-center justify-between">
+     <div class="flex items-center space-x-4">
+      <div class="w-12 h-12 gradient-primary rounded-xl flex items-center justify-center">
+       <svg class="w-6 h-6 text-white" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z" />
+       </svg>
+      </div>
+      <h1 id="site-title" class="text-2xl font-bold gradient-text">StreamLicenses Pro</h1>
+     </div>
+     <div class="hidden md:flex items-center space-x-2"><button onclick="scrollToSection('streaming')" class="nav-link">🎬 Streaming</button> <button onclick="scrollToSection('software')" class="nav-link">💻 Software</button> <button onclick="openAdminPanel()" class="nav-link">⚙️ Admin</button>
+     </div>
+    </div>
+   </nav>
+  </header>
+  <main class="h-full"><!-- Hero Section -->
+   <section class="hero-bg text-white section">
+    <div class="container text-center relative z-10">
+     <div class="max-w-4xl mx-auto">
+      <div class="mb-8">
+       <div class="inline-block w-20 h-20 glass rounded-2xl flex items-center justify-center mb-8"><span class="text-4xl">⚡</span>
+       </div>
+      </div>
+      <h2 id="hero-title" class="text-4xl md:text-6xl font-black mb-8">Las Mejores Plataformas Streaming</h2>
+      <p id="hero-subtitle" class="text-xl md:text-2xl mb-12 opacity-90 max-w-3xl mx-auto">Acceso premium a contenido ilimitado y licencias de software profesional con descuentos exclusivos</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-6 max-w-lg mx-auto mb-16"><button onclick="scrollToSection('streaming')" class="btn btn-secondary">🎬 Explorar Streaming</button> <button onclick="scrollToSection('software')" class="btn btn-secondary">💻 Ver Software</button>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+       <div class="stat-card">
+        <div class="text-3xl md:text-4xl font-black mb-2">
+         80+
+        </div>
+        <div class="text-sm opacity-80">
+         Plataformas
+        </div>
+       </div>
+       <div class="stat-card">
+        <div class="text-3xl md:text-4xl font-black mb-2">
+         24/7
+        </div>
+        <div class="text-sm opacity-80">
+         Soporte
+        </div>
+       </div>
+       <div class="stat-card">
+        <div class="text-3xl md:text-4xl font-black mb-2">
+         100%
+        </div>
+        <div class="text-sm opacity-80">
+         Garantía
+        </div>
+       </div>
+       <div class="stat-card">
+        <div class="text-3xl md:text-4xl font-black mb-2">
+         5★
+        </div>
+        <div class="text-sm opacity-80">
+         Calificación
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main><!-- Streaming Platforms Section -->
+  <section id="streaming" class="section bg-gray-50">
+   <div class="container">
+    <div class="text-center mb-16">
+     <div class="inline-block w-16 h-16 gradient-primary rounded-2xl flex items-center justify-center mb-8"><span class="text-3xl">🎬</span>
+     </div>
+     <h3 id="streaming-section-title" class="text-3xl md:text-4xl font-black mb-6 gradient-text">Plataformas Streaming Premium</h3>
+     <p class="text-lg text-gray-600 max-w-3xl mx-auto">Disfruta del mejor contenido con acceso premium a las plataformas más populares del mundo</p>
+    </div>
+    <div id="streaming-products" class="grid-modern"><!-- Streaming products will be rendered here -->
+    </div>
+   </div>
+  </section><!-- Software Licenses Section -->
+  <section id="software" class="section">
+   <div class="container">
+    <div class="text-center mb-16">
+     <div class="inline-block w-16 h-16 gradient-accent rounded-2xl flex items-center justify-center mb-8"><span class="text-3xl">💻</span>
+     </div>
+     <h3 id="software-section-title" class="text-3xl md:text-4xl font-black mb-6 gradient-text">Licencias de Software</h3>
+     <p class="text-lg text-gray-600 max-w-3xl mx-auto">Herramientas profesionales para potenciar tu productividad y creatividad al máximo nivel</p>
+    </div>
+    <div id="software-products" class="grid-modern"><!-- Software products will be rendered here -->
+    </div>
+   </div>
+  </section><!-- Footer -->
+  <footer class="gradient-primary text-white section">
+   <div class="container text-center">
+    <div class="max-w-4xl mx-auto"><!-- Trust Elements First -->
+     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+      <div class="stat-card">
+       <div class="text-2xl mb-2">
+        🔒
+       </div>
+       <div class="font-bold">
+        Pago Seguro
+       </div>
+      </div>
+      <div class="stat-card">
+       <div class="text-2xl mb-2">
+        ⚡
+       </div>
+       <div class="font-bold">
+        Entrega Inmediata
+       </div>
+      </div>
+      <div class="stat-card">
+       <div class="text-2xl mb-2">
+        🛡️
+       </div>
+       <div class="font-bold">
+        Garantía Total
+       </div>
+      </div>
+      <div class="stat-card">
+       <div class="text-2xl mb-2">
+        📞
+       </div>
+       <div class="font-bold">
+        Soporte 24/7
+       </div>
+      </div>
+     </div><!-- Company Info at Bottom -->
+     <div class="mb-12">
+      <div class="flex items-center justify-center gap-4 mb-8">
+       <div class="w-16 h-16 glass rounded-2xl flex items-center justify-center">
+        <svg class="w-8 h-8 text-white" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z" />
+        </svg>
+       </div>
+       <h2 class="text-4xl font-black">StreamLicenses Pro Enhanced</h2>
+      </div>
+      <p class="text-xl opacity-90">Tu tienda confiable para plataformas streaming y licencias de software. Acceso premium garantizado con soporte 24/7 y descuentos exclusivos.</p>
+     </div>
+     <div class="pt-8 border-t border-white border-opacity-20">
+      <p id="footer-text" class="text-white opacity-80">© 2024 StreamLicenses Pro Enhanced. Todos los derechos reservados.</p>
+     </div>
+    </div>
+   </div>
+  </footer><!-- Purchase Modal -->
+  <div id="purchase-modal" class="fixed inset-0 modal-backdrop hidden items-center justify-center z-50 p-4">
+   <div class="modal-content max-w-2xl w-full mx-auto p-8">
+    <div class="flex justify-between items-center mb-8">
+     <div class="flex items-center gap-4">
+      <div class="w-14 h-14 gradient-primary rounded-2xl flex items-center justify-center"><span class="text-white text-2xl">🛒</span>
+      </div>
+      <h3 class="text-3xl font-bold gradient-text">Completar Compra</h3>
+     </div><button onclick="closePurchaseModal()" class="text-gray-400 hover:text-gray-600 p-3 rounded-xl hover:bg-gray-100 transition-colors">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg></button>
+    </div>
+    <form id="purchase-form" onsubmit="processPurchase(event)" class="space-y-6">
+     <div><label for="product-name" class="form-label">Producto Seleccionado</label> <input type="text" id="product-name" readonly class="form-input bg-gray-50 cursor-not-allowed">
+     </div>
+     <div class="grid md:grid-cols-2 gap-6">
+      <div><label for="customer-name" class="form-label">Nombre Completo *</label> <input type="text" id="customer-name" required class="form-input" placeholder="Tu nombre completo">
+      </div>
+      <div><label for="customer-phone" class="form-label">Número de Teléfono *</label> <input type="tel" id="customer-phone" required class="form-input" placeholder="+51 999 888 777">
+      </div>
+     </div>
+     <div class="grid md:grid-cols-2 gap-6">
+      <div><label for="profile-name" class="form-label">Nombre del Perfil *</label> <input type="text" id="profile-name" required class="form-input" placeholder="Nombre para la cuenta">
+      </div>
+      <div><label for="quantity" class="form-label">Cantidad</label> <select id="quantity" onchange="updateTotal()" class="form-input"> <option value="1">1 unidad</option> <option value="2">2 unidades</option> <option value="3">3 unidades</option> <option value="5">5 unidades</option> <option value="10">10 unidades</option> </select>
+      </div>
+     </div>
+     <div class="card p-8">
+      <div class="flex items-center gap-4 mb-6">
+       <div class="w-12 h-12 gradient-accent rounded-xl flex items-center justify-center"><span class="text-white text-xl">💳</span>
+       </div>
+       <h4 class="text-2xl font-bold gradient-text">Información de Pago</h4>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+       <div class="card p-6">
+        <div class="flex items-center justify-between"><span class="font-semibold text-blue-600">Yape:</span> <span class="text-blue-900 font-mono text-lg">953250951</span>
+        </div>
+       </div>
+       <div class="card p-6">
+        <div class="flex items-center justify-between"><span class="font-semibold text-blue-600">Plin:</span> <span class="text-blue-900 font-mono text-lg">953250951</span>
+        </div>
+       </div>
+      </div>
+      <div class="gradient-accent p-6 rounded-xl text-white">
+       <div class="flex items-center gap-3 mb-3"><span class="text-2xl">📱</span>
+        <p class="font-semibold text-lg">Envío de Comprobante:</p>
+       </div>
+       <p class="text-white opacity-90">Envía tu comprobante de pago al número: <span class="font-mono font-bold">953250951</span></p>
+      </div>
+      <p class="text-sm text-center mt-4 text-gray-600">💡 Realiza el pago a cualquiera de estos números</p>
+     </div>
+     <div class="card p-8">
+      <div class="flex justify-between items-center"><span class="text-2xl font-bold text-gray-700">Total a Pagar:</span>
+       <div id="total-price" class="text-right">
+        <div class="text-4xl font-black text-green-600">
+         S/ 0.00
+        </div>
+        <div class="text-lg text-gray-500 mt-1">
+         ($0.00 USD)
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="flex gap-4 pt-6"><button type="button" onclick="closePurchaseModal()" class="flex-1 btn btn-secondary">Cancelar</button> <button type="submit" id="purchase-btn" class="flex-1 btn btn-primary"> <span id="purchase-btn-text">Confirmar Compra</span> <span id="purchase-btn-loading" class="loading-spinner hidden"></span> </button>
+     </div>
+    </form>
+   </div>
+  </div><!-- Admin Login Modal -->
+  <div id="admin-login-modal" class="fixed inset-0 modal-backdrop hidden items-center justify-center z-50 p-4">
+   <div class="modal-content max-w-md w-full mx-auto p-8">
+    <div class="text-center mb-8">
+     <div class="w-16 h-16 gradient-accent rounded-2xl flex items-center justify-center mx-auto mb-6"><span class="text-white text-2xl">🔐</span>
+     </div>
+     <h3 class="text-2xl font-bold gradient-text mb-2">Acceso Administrativo</h3>
+     <p class="text-gray-600">Ingresa la contraseña para acceder al panel</p>
+    </div>
+    <form onsubmit="authenticateAdmin(event)" class="space-y-6">
+     <div><label for="admin-password" class="form-label">Contraseña</label> <input type="password" id="admin-password" required class="form-input" placeholder="Ingresa tu contraseña">
+      <div id="login-error" class="text-red-500 text-sm mt-2" style="display: none;"></div>
+     </div>
+     <div class="flex gap-4"><button type="button" onclick="closeAdminLogin()" class="flex-1 btn btn-secondary">Cancelar</button> <button type="submit" class="flex-1 btn btn-primary">Acceder</button>
+     </div>
+    </form>
+   </div>
+  </div><!-- Admin Panel Modal -->
+  <div id="admin-modal" class="fixed inset-0 modal-backdrop hidden items-center justify-center z-50 p-4">
+   <div class="modal-content max-w-7xl w-full mx-auto p-8 max-h-screen overflow-y-auto">
+    <div class="flex justify-between items-center mb-8">
+     <div class="flex items-center gap-4">
+      <div class="w-14 h-14 gradient-accent rounded-2xl flex items-center justify-center"><span class="text-white text-2xl">⚙️</span>
+      </div>
+      <h3 class="text-3xl font-bold gradient-text">Panel Administrativo</h3>
+     </div><button onclick="closeAdminPanel()" class="text-gray-400 hover:text-gray-600 p-3 rounded-xl hover:bg-gray-100 transition-colors">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg></button>
+    </div><!-- Admin Navigation -->
+    <div class="flex flex-wrap gap-2 mb-8 p-4 bg-gray-50 rounded-xl"><button onclick="setAdminView('dashboard')" id="nav-dashboard" class="nav-link admin-nav-btn">📊 Dashboard</button> <button onclick="setAdminView('products')" id="nav-products" class="nav-link admin-nav-btn">📦 Productos</button> <button onclick="setAdminView('categories')" id="nav-categories" class="nav-link admin-nav-btn">🏷️ Categorías</button> <button onclick="setAdminView('orders')" id="nav-orders" class="nav-link admin-nav-btn">📋 Pedidos</button> <button onclick="setAdminView('settings')" id="nav-settings" class="nav-link admin-nav-btn">⚙️ Configuración</button> <button onclick="logoutAdmin()" class="nav-link text-red-600 hover:bg-red-50">🚪 Cerrar Sesión</button>
+    </div><!-- Admin Content -->
+    <div id="admin-content"><!-- Content will be rendered here -->
+    </div>
+   </div>
+  </div><!-- Confirmation Dialog -->
+  <div id="confirmation-dialog" class="confirmation-overlay hidden">
+   <div class="confirmation-dialog">
+    <div class="text-center mb-6">
+     <div class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+      <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+      </svg>
+     </div>
+     <h4 class="text-xl font-bold text-gray-800 mb-2">Confirmar Eliminación</h4>
+     <p class="text-gray-600" id="confirmation-message">¿Estás seguro de que deseas eliminar este pedido?</p>
+    </div>
+    <div class="flex gap-4"><button onclick="cancelConfirmation()" class="flex-1 btn btn-secondary">Cancelar</button> <button onclick="confirmAction()" class="flex-1 btn bg-red-500 text-white hover:bg-red-600">Eliminar</button>
+    </div>
+   </div>
+  </div><!-- Success Toast -->
+  <div id="success-toast" class="toast card p-6 bg-green-500 text-white">
+   <div class="flex items-center gap-3">
+    <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+    </svg><span id="toast-message">¡Operación realizada con éxito!</span>
+   </div>
+  </div>
+  <script>
+        // Configuration
+        const defaultConfig = {
+            site_title: "StreamLicenses Pro",
+            hero_title: "Las Mejores Plataformas Streaming",
+            hero_subtitle: "Acceso premium a contenido ilimitado y licencias de software profesional con descuentos exclusivos",
+            streaming_section_title: "Plataformas Streaming Premium",
+            software_section_title: "Licencias de Software",
+            footer_text: "© 2024 StreamLicenses Pro Enhanced. Todos los derechos reservados.",
+            primary_color: "#3b82f6",
+            secondary_color: "#8b5cf6",
+            accent_color: "#06b6d4",
+            background_color: "#f8fafc",
+            text_color: "#1e293b",
+            font_family: "Inter",
+            font_size: 16
+        };
+
+        // Global State
+        let appState = {
+            orders: [],
+            products: [],
+            categories: ['streaming', 'software'],
+            currentProductType: '',
+            currentProductName: '',
+            currentPrice: 0,
+            isLoading: false,
+            exchangeRate: 3.75,
+            confirmationCallback: null,
+            isAdminAuthenticated: false,
+            currentAdminView: 'dashboard',
+            editingProduct: null
+        };
+
+        // Sample Products Data
+        const sampleProducts = [
+            {
+                id: '1',
+                product_name: 'Netflix Premium',
+                product_type: 'streaming',
+                product_description: 'Acceso completo a Netflix con 4K Ultra HD, sin anuncios y hasta 4 pantallas simultáneas',
+                product_price: 59.99,
+                product_icon: 'N',
+                product_color: 'linear-gradient(135deg, #e50914 0%, #b20710 100%)',
+                product_badges: '4K Ultra HD, Sin Anuncios, 4 Pantallas'
+            },
+            {
+                id: '2',
+                product_name: 'Disney+ Premium',
+                product_type: 'streaming',
+                product_description: 'Todo el contenido de Disney, Marvel, Star Wars y National Geographic en calidad 4K',
+                product_price: 49.99,
+                product_icon: 'D+',
+                product_color: 'linear-gradient(135deg, #113ccf 0%, #0c2a8a 100%)',
+                product_badges: '4K HDR, Contenido Exclusivo, Descargas'
+            },
+            {
+                id: '3',
+                product_name: 'Amazon Prime Video',
+                product_type: 'streaming',
+                product_description: 'Películas y series exclusivas de Amazon, incluye Prime Video y beneficios adicionales',
+                product_price: 39.99,
+                product_icon: 'PV',
+                product_color: 'linear-gradient(135deg, #ff9900 0%, #cc7700 100%)',
+                product_badges: 'Contenido Original, Prime Benefits, 4K'
+            },
+            {
+                id: '4',
+                product_name: 'HBO Max',
+                product_type: 'streaming',
+                product_description: 'Lo mejor de HBO, Warner Bros y DC Comics en una sola plataforma premium',
+                product_price: 54.99,
+                product_icon: 'HBO',
+                product_color: 'linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)',
+                product_badges: 'Contenido HBO, Estrenos Simultáneos, 4K'
+            },
+            {
+                id: '5',
+                product_name: 'Spotify Premium',
+                product_type: 'streaming',
+                product_description: 'Música sin límites, sin anuncios y con descargas offline en la mejor calidad',
+                product_price: 29.99,
+                product_icon: 'SP',
+                product_color: 'linear-gradient(135deg, #1db954 0%, #1ed760 100%)',
+                product_badges: 'Sin Anuncios, Descargas, Calidad HD'
+            },
+            {
+                id: '6',
+                product_name: 'YouTube Premium',
+                product_type: 'streaming',
+                product_description: 'YouTube sin anuncios, YouTube Music incluido y reproducción en segundo plano',
+                product_price: 34.99,
+                product_icon: 'YT',
+                product_color: 'linear-gradient(135deg, #ff0000 0%, #cc0000 100%)',
+                product_badges: 'Sin Anuncios, YouTube Music, Offline'
+            },
+            {
+                id: '7',
+                product_name: 'Microsoft Office 365',
+                product_type: 'software',
+                product_description: 'Suite completa de Office con Word, Excel, PowerPoint, Outlook y 1TB de OneDrive',
+                product_price: 262.50,
+                product_icon: 'O365',
+                product_color: 'linear-gradient(135deg, #0078d4 0%, #106ebe 100%)',
+                product_badges: 'Todas las Apps, 1TB OneDrive, Actualizaciones'
+            },
+            {
+                id: '8',
+                product_name: 'Adobe Creative Cloud',
+                product_type: 'software',
+                product_description: 'Acceso completo a todas las aplicaciones de Adobe: Photoshop, Illustrator, Premiere Pro y más',
+                product_price: 299.99,
+                product_icon: 'CC',
+                product_color: 'linear-gradient(135deg, #ff0000 0%, #cc0000 100%)',
+                product_badges: 'Todas las Apps, 100GB Cloud, Fonts'
+            },
+            {
+                id: '9',
+                product_name: 'Windows 11 Pro',
+                product_type: 'software',
+                product_description: 'Sistema operativo Windows 11 Professional con todas las características empresariales',
+                product_price: 199.99,
+                product_icon: 'W11',
+                product_color: 'linear-gradient(135deg, #0078d4 0%, #005a9e 100%)',
+                product_badges: 'Licencia Original, Soporte Completo, Actualizaciones'
+            },
+            {
+                id: '10',
+                product_name: 'Antivirus Kaspersky',
+                product_type: 'software',
+                product_description: 'Protección completa contra virus, malware y amenazas online con firewall avanzado',
+                product_price: 89.99,
+                product_icon: 'KS',
+                product_color: 'linear-gradient(135deg, #006d5b 0%, #00a082 100%)',
+                product_badges: 'Protección Total, Firewall, Anti-Phishing'
+            }
+        ];
+
+        // Initialize sample data
+        appState.products = sampleProducts;
+
+        // Element SDK Functions
+        async function onConfigChange(config) {
+            const elements = [
+                { id: 'site-title', value: config.site_title || defaultConfig.site_title },
+                { id: 'hero-title', value: config.hero_title || defaultConfig.hero_title },
+                { id: 'hero-subtitle', value: config.hero_subtitle || defaultConfig.hero_subtitle },
+                { id: 'streaming-section-title', value: config.streaming_section_title || defaultConfig.streaming_section_title },
+                { id: 'software-section-title', value: config.software_section_title || defaultConfig.software_section_title },
+                { id: 'footer-text', value: config.footer_text || defaultConfig.footer_text }
+            ];
+
+            elements.forEach(({ id, value }) => {
+                const element = document.getElementById(id);
+                if (element) element.textContent = value;
+            });
+
+            const root = document.documentElement;
+            root.style.setProperty('--primary', config.primary_color || defaultConfig.primary_color);
+            root.style.setProperty('--secondary', config.secondary_color || defaultConfig.secondary_color);
+            root.style.setProperty('--accent', config.accent_color || defaultConfig.accent_color);
+            root.style.setProperty('--background', config.background_color || defaultConfig.background_color);
+            root.style.setProperty('--text', config.text_color || defaultConfig.text_color);
+
+            const customFont = config.font_family || defaultConfig.font_family;
+            const baseFontStack = 'system-ui, -apple-system, sans-serif';
+            document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
+
+            const baseSize = config.font_size || defaultConfig.font_size;
+            document.documentElement.style.fontSize = `${baseSize}px`;
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [
+                    {
+                        get: () => config.primary_color || defaultConfig.primary_color,
+                        set: (value) => {
+                            config.primary_color = value;
+                            if (window.elementSdk) {
+                                window.elementSdk.setConfig({ primary_color: value });
+                            }
+                        }
+                    },
+                    {
+                        get: () => config.secondary_color || defaultConfig.secondary_color,
+                        set: (value) => {
+                            config.secondary_color = value;
+                            if (window.elementSdk) {
+                                window.elementSdk.setConfig({ secondary_color: value });
+                            }
+                        }
+                    },
+                    {
+                        get: () => config.accent_color || defaultConfig.accent_color,
+                        set: (value) => {
+                            config.accent_color = value;
+                            if (window.elementSdk) {
+                                window.elementSdk.setConfig({ accent_color: value });
+                            }
+                        }
+                    },
+                    {
+                        get: () => config.background_color || defaultConfig.background_color,
+                        set: (value) => {
+                            config.background_color = value;
+                            if (window.elementSdk) {
+                                window.elementSdk.setConfig({ background_color: value });
+                            }
+                        }
+                    },
+                    {
+                        get: () => config.text_color || defaultConfig.text_color,
+                        set: (value) => {
+                            config.text_color = value;
+                            if (window.elementSdk) {
+                                window.elementSdk.setConfig({ text_color: value });
+                            }
+                        }
+                    }
+                ],
+                borderables: [],
+                fontEditable: {
+                    get: () => config.font_family || defaultConfig.font_family,
+                    set: (value) => {
+                        config.font_family = value;
+                        if (window.elementSdk) {
+                            window.elementSdk.setConfig({ font_family: value });
+                        }
+                    }
+                },
+                fontSizeable: {
+                    get: () => config.font_size || defaultConfig.font_size,
+                    set: (value) => {
+                        config.font_size = value;
+                        if (window.elementSdk) {
+                            window.elementSdk.setConfig({ font_size: value });
+                        }
+                    }
+                }
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["site_title", config.site_title || defaultConfig.site_title],
+                ["hero_title", config.hero_title || defaultConfig.hero_title],
+                ["hero_subtitle", config.hero_subtitle || defaultConfig.hero_subtitle],
+                ["streaming_section_title", config.streaming_section_title || defaultConfig.streaming_section_title],
+                ["software_section_title", config.software_section_title || defaultConfig.software_section_title],
+                ["footer_text", config.footer_text || defaultConfig.footer_text]
+            ]);
+        }
+
+        // Utility Functions
+        function formatPrice(priceInPEN) {
+            const priceUSD = priceInPEN / appState.exchangeRate;
+            return {
+                pen: `S/ ${priceInPEN.toFixed(2)}`,
+                usd: `$${priceUSD.toFixed(2)}`,
+                penValue: priceInPEN,
+                usdValue: priceUSD
+            };
+        }
+
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Purchase Functions
+        function openPurchaseModal(type, name, price) {
+            appState.currentProductType = type;
+            appState.currentProductName = name;
+            appState.currentPrice = price;
+            
+            document.getElementById('product-name').value = name;
+            document.getElementById('quantity').value = '1';
+            
+            updateTotal();
+            
+            const modal = document.getElementById('purchase-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            setTimeout(() => {
+                const nameInput = document.getElementById('customer-name');
+                if (nameInput) nameInput.focus();
+            }, 100);
+        }
+
+        function closePurchaseModal() {
+            const modal = document.getElementById('purchase-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            
+            const form = document.getElementById('purchase-form');
+            if (form) form.reset();
+            
+            // Reset loading state
+            appState.isLoading = false;
+            const purchaseBtn = document.getElementById('purchase-btn');
+            const btnText = document.getElementById('purchase-btn-text');
+            const btnLoading = document.getElementById('purchase-btn-loading');
+            
+            if (purchaseBtn) purchaseBtn.disabled = false;
+            if (btnText) btnText.classList.remove('hidden');
+            if (btnLoading) btnLoading.classList.add('hidden');
+        }
+
+        function updateTotal() {
+            const quantitySelect = document.getElementById('quantity');
+            const totalPriceElement = document.getElementById('total-price');
+            
+            if (!quantitySelect || !totalPriceElement) return;
+            
+            const quantity = parseInt(quantitySelect.value) || 1;
+            const totalPEN = appState.currentPrice * quantity;
+            
+            const priceInfo = formatPrice(totalPEN);
+            totalPriceElement.innerHTML = `
+                <div class="text-right">
+                    <div class="text-4xl font-black text-green-600">${priceInfo.pen}</div>
+                    <div class="text-lg text-gray-500 mt-1">(${priceInfo.usd} USD)</div>
+                </div>
+            `;
+        }
+
+        // Purchase Processing
+        function processPurchase(event) {
+            event.preventDefault();
+            
+            if (appState.isLoading) return;
+            
+            const customerName = document.getElementById('customer-name')?.value?.trim();
+            const customerPhone = document.getElementById('customer-phone')?.value?.trim();
+            const profileName = document.getElementById('profile-name')?.value?.trim();
+            
+            if (!customerName || !customerPhone || !profileName) {
+                showToast('Por favor, completa todos los campos obligatorios', 'error');
+                return;
+            }
+            
+            const purchaseBtn = document.getElementById('purchase-btn');
+            const btnText = document.getElementById('purchase-btn-text');
+            const btnLoading = document.getElementById('purchase-btn-loading');
+            
+            if (!purchaseBtn || !btnText || !btnLoading) return;
+            
+            appState.isLoading = true;
+            btnText.classList.add('hidden');
+            btnLoading.classList.remove('hidden');
+            purchaseBtn.disabled = true;
+            
+            setTimeout(() => {
+                try {
+                    const quantitySelect = document.getElementById('quantity');
+                    const quantity = parseInt(quantitySelect?.value) || 1;
+                    const totalPrice = appState.currentPrice * quantity;
+                    
+                    const orderData = {
+                        id: Date.now().toString(),
+                        product_type: appState.currentProductType,
+                        product_name: appState.currentProductName,
+                        customer_name: customerName,
+                        customer_phone: customerPhone,
+                        profile_name: profileName,
+                        quantity: quantity,
+                        total_price: totalPrice,
+                        created_at: new Date().toISOString()
+                    };
+
+                    appState.orders.push(orderData);
+                    
+                    closePurchaseModal();
+                    showToast('¡Compra realizada con éxito! El pedido se ha registrado correctamente.', 'success');
+                } catch (error) {
+                    showToast('Error al procesar la compra. Inténtalo nuevamente.', 'error');
+                } finally {
+                    appState.isLoading = false;
+                    btnText.classList.remove('hidden');
+                    btnLoading.classList.add('hidden');
+                    purchaseBtn.disabled = false;
+                }
+            }, 2000);
+        }
+
+        // Toast System
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('success-toast');
+            const messageElement = document.getElementById('toast-message');
+            
+            if (!toast || !messageElement) return;
+            
+            messageElement.textContent = message;
+            
+            const baseClasses = 'toast card p-6 text-white';
+            const typeClass = type === 'error' ? 'bg-red-500' : 'bg-green-500';
+            toast.className = `${baseClasses} ${typeClass}`;
+            
+            toast.style.display = 'block';
+            toast.classList.remove('show');
+            
+            setTimeout(() => {
+                toast.classList.add('show');
+            }, 10);
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                    toast.style.display = 'none';
+                }, 300);
+            }, 3000);
+        }
+
+        // Confirmation Dialog
+        function showConfirmation(message, callback) {
+            const dialog = document.getElementById('confirmation-dialog');
+            const messageElement = document.getElementById('confirmation-message');
+            
+            if (!dialog || !messageElement) return;
+            
+            messageElement.textContent = message;
+            appState.confirmationCallback = callback;
+            dialog.classList.remove('hidden');
+        }
+
+        function cancelConfirmation() {
+            const dialog = document.getElementById('confirmation-dialog');
+            if (dialog) dialog.classList.add('hidden');
+            appState.confirmationCallback = null;
+        }
+
+        function confirmAction() {
+            if (appState.confirmationCallback) {
+                appState.confirmationCallback();
+            }
+            cancelConfirmation();
+        }
+
+        // Admin Panel Functions
+        function openAdminPanel() {
+            if (!appState.isAdminAuthenticated) {
+                showAdminLogin();
+            } else {
+                const modal = document.getElementById('admin-modal');
+                if (modal) {
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                    renderAdminDashboard();
+                }
+            }
+        }
+
+        function showAdminLogin() {
+            const modal = document.getElementById('admin-login-modal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                setTimeout(() => {
+                    const passwordInput = document.getElementById('admin-password');
+                    if (passwordInput) passwordInput.focus();
+                }, 100);
+            }
+        }
+
+        function closeAdminLogin() {
+            const modal = document.getElementById('admin-login-modal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.getElementById('admin-password').value = '';
+                document.getElementById('login-error').style.display = 'none';
+            }
+        }
+
+        function authenticateAdmin(event) {
+            event.preventDefault();
+            const password = document.getElementById('admin-password').value;
+            const errorElement = document.getElementById('login-error');
+            
+            if (password === 'Dayos1108') {
+                appState.isAdminAuthenticated = true;
+                closeAdminLogin();
+                openAdminPanel();
+            } else {
+                errorElement.style.display = 'block';
+                errorElement.textContent = 'Contraseña incorrecta. Inténtalo de nuevo.';
+                document.getElementById('admin-password').value = '';
+            }
+        }
+
+        function closeAdminPanel() {
+            const modal = document.getElementById('admin-modal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+
+        function logoutAdmin() {
+            appState.isAdminAuthenticated = false;
+            closeAdminPanel();
+            showToast('Sesión cerrada correctamente', 'success');
+        }
+
+        function setAdminView(view) {
+            appState.currentAdminView = view;
+            
+            // Update navigation
+            document.querySelectorAll('.admin-nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById(`nav-${view}`).classList.add('active');
+            
+            // Render content
+            renderAdminContent();
+        }
+
+        function renderAdminDashboard() {
+            appState.currentAdminView = 'dashboard';
+            setAdminView('dashboard');
+        }
+
+        function renderAdminContent() {
+            const content = document.getElementById('admin-content');
+            if (!content) return;
+            
+            switch (appState.currentAdminView) {
+                case 'dashboard':
+                    content.innerHTML = renderDashboardView();
+                    break;
+                case 'products':
+                    content.innerHTML = renderProductsView();
+                    break;
+                case 'categories':
+                    content.innerHTML = renderCategoriesView();
+                    break;
+                case 'orders':
+                    content.innerHTML = renderOrdersView();
+                    break;
+                case 'settings':
+                    content.innerHTML = renderSettingsView();
+                    break;
+                default:
+                    content.innerHTML = renderDashboardView();
+            }
+        }
+
+        function deleteOrder(orderId) {
+            showConfirmation('¿Estás seguro de que deseas eliminar este pedido? Esta acción no se puede deshacer.', () => {
+                appState.orders = appState.orders.filter(order => order.id !== orderId);
+                renderAdminContent();
+                showToast('Pedido eliminado correctamente', 'success');
+            });
+        }
+
+        // Product Management Functions
+        function renderProductForm() {
+            const isEditing = appState.editingProduct !== null;
+            const product = isEditing ? appState.products.find(p => p.id === appState.editingProduct) : null;
+            
+            return `
+                <form onsubmit="${isEditing ? 'updateProduct' : 'addProduct'}(event)" class="space-y-6">
+                    <div class="text-center mb-6">
+                        <h5 class="text-xl font-bold">${isEditing ? 'Editar Producto' : 'Agregar Nuevo Producto'}</h5>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="form-label">Nombre del Producto *</label>
+                            <input type="text" id="product-name" required class="form-input" 
+                                   value="${isEditing ? escapeHtml(product.product_name) : ''}"
+                                   placeholder="Ej: Netflix Premium">
+                        </div>
+                        
+                        <div>
+                            <label class="form-label">Categoría *</label>
+                            <select id="product-category" required class="form-input">
+                                <option value="">Seleccionar categoría</option>
+                                ${appState.categories.map(cat => `
+                                    <option value="${cat}" ${isEditing && product.product_type === cat ? 'selected' : ''}>
+                                        ${cat.charAt(0).toUpperCase() + cat.slice(1)}
+                                    </option>
+                                `).join('')}
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="form-label">Descripción *</label>
+                        <textarea id="product-description" required class="form-input" rows="3" 
+                                  placeholder="Describe las características del producto">${isEditing ? escapeHtml(product.product_description) : ''}</textarea>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div>
+                            <label class="form-label">Precio (PEN) *</label>
+                            <input type="number" step="0.01" id="product-price" required class="form-input" 
+                                   value="${isEditing ? product.product_price : ''}"
+                                   placeholder="59.99">
+                        </div>
+                        
+                        <div>
+                            <label class="form-label">Icono *</label>
+                            <input type="text" id="product-icon" required class="form-input" maxlength="5"
+                                   value="${isEditing ? escapeHtml(product.product_icon) : ''}"
+                                   placeholder="N, SP, CC, etc.">
+                        </div>
+                        
+                        <div>
+                            <label class="form-label">Color del Icono *</label>
+                            <select id="product-color" required class="form-input">
+                                <option value="">Seleccionar color</option>
+                                <option value="linear-gradient(135deg, #e50914 0%, #b20710 100%)" ${isEditing && product.product_color.includes('#e50914') ? 'selected' : ''}>Rojo Netflix</option>
+                                <option value="linear-gradient(135deg, #113ccf 0%, #0c2a8a 100%)" ${isEditing && product.product_color.includes('#113ccf') ? 'selected' : ''}>Azul Disney</option>
+                                <option value="linear-gradient(135deg, #ff9900 0%, #cc7700 100%)" ${isEditing && product.product_color.includes('#ff9900') ? 'selected' : ''}>Naranja Amazon</option>
+                                <option value="linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)" ${isEditing && product.product_color.includes('#8b5cf6') ? 'selected' : ''}>Púrpura HBO</option>
+                                <option value="linear-gradient(135deg, #1db954 0%, #1ed760 100%)" ${isEditing && product.product_color.includes('#1db954') ? 'selected' : ''}>Verde Spotify</option>
+                                <option value="linear-gradient(135deg, #0078d4 0%, #106ebe 100%)" ${isEditing && product.product_color.includes('#0078d4') ? 'selected' : ''}>Azul Microsoft</option>
+                                <option value="linear-gradient(135deg, #ff0000 0%, #cc0000 100%)" ${isEditing && product.product_color.includes('#ff0000') ? 'selected' : ''}>Rojo Adobe</option>
+                                <option value="linear-gradient(135deg, #006d5b 0%, #00a082 100%)" ${isEditing && product.product_color.includes('#006d5b') ? 'selected' : ''}>Verde Kaspersky</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="form-label">Características (separadas por comas)</label>
+                        <input type="text" id="product-badges" class="form-input" 
+                               value="${isEditing ? escapeHtml(product.product_badges || '') : ''}"
+                               placeholder="4K Ultra HD, Sin Anuncios, 4 Pantallas">
+                    </div>
+                    
+                    <div class="flex gap-4">
+                        <button type="button" onclick="hideProductForm()" class="flex-1 btn btn-secondary">Cancelar</button>
+                        <button type="submit" class="flex-1 btn btn-primary">
+                            ${isEditing ? '✏️ Actualizar Producto' : '➕ Agregar Producto'}
+                        </button>
+                    </div>
+                </form>
+            `;
+        }
+
+        function showAddProductForm() {
+            appState.editingProduct = null;
+            const container = document.getElementById('product-form-container');
+            if (container) {
+                container.innerHTML = renderProductForm();
+                container.style.display = 'block';
+            }
+        }
+
+        function hideProductForm() {
+            const container = document.getElementById('product-form-container');
+            if (container) {
+                container.style.display = 'none';
+            }
+            appState.editingProduct = null;
+        }
+
+        function addProduct(event) {
+            event.preventDefault();
+            
+            const productData = {
+                id: Date.now().toString(),
+                product_name: document.getElementById('product-name').value.trim(),
+                product_type: document.getElementById('product-category').value,
+                product_description: document.getElementById('product-description').value.trim(),
+                product_price: parseFloat(document.getElementById('product-price').value),
+                product_icon: document.getElementById('product-icon').value.trim(),
+                product_color: document.getElementById('product-color').value,
+                product_badges: document.getElementById('product-badges').value.trim()
+            };
+            
+            appState.products.push(productData);
+            hideProductForm();
+            renderAdminContent();
+            
+            // Force re-render of products on main page
+            setTimeout(() => {
+                renderProducts();
+            }, 100);
+            
+            showToast('Producto agregado correctamente', 'success');
+        }
+
+        function editProduct(productId) {
+            appState.editingProduct = productId;
+            const container = document.getElementById('product-form-container');
+            if (container) {
+                container.innerHTML = renderProductForm();
+                container.style.display = 'block';
+            }
+        }
+
+        function updateProduct(event) {
+            event.preventDefault();
+            
+            const productIndex = appState.products.findIndex(p => p.id === appState.editingProduct);
+            if (productIndex === -1) return;
+            
+            appState.products[productIndex] = {
+                ...appState.products[productIndex],
+                product_name: document.getElementById('product-name').value.trim(),
+                product_type: document.getElementById('product-category').value,
+                product_description: document.getElementById('product-description').value.trim(),
+                product_price: parseFloat(document.getElementById('product-price').value),
+                product_icon: document.getElementById('product-icon').value.trim(),
+                product_color: document.getElementById('product-color').value,
+                product_badges: document.getElementById('product-badges').value.trim()
+            };
+            
+            hideProductForm();
+            renderAdminContent();
+            
+            // Force re-render of products on main page
+            setTimeout(() => {
+                renderProducts();
+            }, 100);
+            
+            showToast('Producto actualizado correctamente', 'success');
+        }
+
+        function deleteProduct(productId) {
+            showConfirmation('¿Estás seguro de que deseas eliminar este producto? Esta acción no se puede deshacer.', () => {
+                appState.products = appState.products.filter(p => p.id !== productId);
+                renderAdminContent();
+                
+                // Force re-render of products on main page
+                setTimeout(() => {
+                    renderProducts();
+                }, 100);
+                
+                showToast('Producto eliminado correctamente', 'success');
+            });
+        }
+
+        // Category Management Functions
+        function showAddCategoryForm() {
+            const container = document.getElementById('category-form-container');
+            if (container) {
+                container.style.display = 'block';
+                setTimeout(() => {
+                    const input = document.getElementById('new-category-name');
+                    if (input) input.focus();
+                }, 100);
+            }
+        }
+
+        function hideCategoryForm() {
+            const container = document.getElementById('category-form-container');
+            if (container) {
+                container.style.display = 'none';
+                document.getElementById('new-category-name').value = '';
+            }
+        }
+
+        function addCategory(event) {
+            event.preventDefault();
+            
+            const categoryName = document.getElementById('new-category-name').value.trim().toLowerCase();
+            
+            if (appState.categories.includes(categoryName)) {
+                showToast('Esta categoría ya existe', 'error');
+                return;
+            }
+            
+            appState.categories.push(categoryName);
+            hideCategoryForm();
+            renderAdminContent();
+            showToast('Categoría agregada correctamente', 'success');
+        }
+
+        function deleteCategory(categoryName) {
+            const productsInCategory = appState.products.filter(p => p.product_type === categoryName).length;
+            
+            if (productsInCategory > 0) {
+                showToast(`No se puede eliminar la categoría "${categoryName}" porque tiene ${productsInCategory} productos asociados`, 'error');
+                return;
+            }
+            
+            showConfirmation(`¿Estás seguro de que deseas eliminar la categoría "${categoryName}"?`, () => {
+                appState.categories = appState.categories.filter(c => c !== categoryName);
+                renderAdminContent();
+                showToast('Categoría eliminada correctamente', 'success');
+            });
+        }
+
+        // Settings Functions
+        function updateExchangeRate(newRate) {
+            appState.exchangeRate = parseFloat(newRate) || 3.75;
+            showToast('Tipo de cambio actualizado', 'success');
+        }
+
+        function clearAllOrders() {
+            showConfirmation('¿Estás seguro de que deseas eliminar TODOS los pedidos? Esta acción no se puede deshacer.', () => {
+                appState.orders = [];
+                renderAdminContent();
+                showToast('Todos los pedidos han sido eliminados', 'success');
+            });
+        }
+
+        function resetToDefaults() {
+            showConfirmation('¿Estás seguro de que deseas restaurar los productos por defecto? Esto eliminará todos los productos actuales.', () => {
+                appState.products = [...sampleProducts];
+                renderAdminContent();
+                renderProducts(); // Update main page
+                showToast('Productos restaurados a valores por defecto', 'success');
+            });
+        }
+
+        // Admin View Renderers
+        function renderDashboardView() {
+            const totalProducts = appState.products.length;
+            const totalOrders = appState.orders.length;
+            const totalRevenue = appState.orders.reduce((sum, order) => sum + order.total_price, 0);
+            const streamingProducts = appState.products.filter(p => p.product_type === 'streaming').length;
+            const softwareProducts = appState.products.filter(p => p.product_type === 'software').length;
+            
+            return `
+                <div class="space-y-8">
+                    <div class="text-center">
+                        <h4 class="text-2xl font-bold gradient-text mb-4">Dashboard General</h4>
+                        <p class="text-gray-600">Resumen de la actividad de tu plataforma</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="card p-6 text-center">
+                            <div class="w-12 h-12 gradient-primary rounded-xl flex items-center justify-center mx-auto mb-4">
+                                <span class="text-white text-xl">📦</span>
+                            </div>
+                            <div class="text-3xl font-black text-gray-800 mb-2">${totalProducts}</div>
+                            <div class="text-sm text-gray-600">Productos Totales</div>
+                        </div>
+                        
+                        <div class="card p-6 text-center">
+                            <div class="w-12 h-12 gradient-accent rounded-xl flex items-center justify-center mx-auto mb-4">
+                                <span class="text-white text-xl">📋</span>
+                            </div>
+                            <div class="text-3xl font-black text-gray-800 mb-2">${totalOrders}</div>
+                            <div class="text-sm text-gray-600">Pedidos Realizados</div>
+                        </div>
+                        
+                        <div class="card p-6 text-center">
+                            <div class="w-12 h-12 gradient-primary rounded-xl flex items-center justify-center mx-auto mb-4">
+                                <span class="text-white text-xl">💰</span>
+                            </div>
+                            <div class="text-2xl font-black text-green-600 mb-2">S/ ${totalRevenue.toFixed(2)}</div>
+                            <div class="text-sm text-gray-600">Ingresos Totales</div>
+                        </div>
+                        
+                        <div class="card p-6 text-center">
+                            <div class="w-12 h-12 gradient-accent rounded-xl flex items-center justify-center mx-auto mb-4">
+                                <span class="text-white text-xl">🏷️</span>
+                            </div>
+                            <div class="text-3xl font-black text-gray-800 mb-2">${appState.categories.length}</div>
+                            <div class="text-sm text-gray-600">Categorías</div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="card p-6">
+                            <h5 class="text-xl font-bold mb-4">Distribución de Productos</h5>
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-600">🎬 Streaming</span>
+                                    <span class="font-bold">${streamingProducts} productos</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-600">💻 Software</span>
+                                    <span class="font-bold">${softwareProducts} productos</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card p-6">
+                            <h5 class="text-xl font-bold mb-4">Acciones Rápidas</h5>
+                            <div class="space-y-3">
+                                <button onclick="setAdminView('products')" class="w-full btn btn-primary text-left">
+                                    📦 Gestionar Productos
+                                </button>
+                                <button onclick="setAdminView('orders')" class="w-full btn btn-secondary text-left">
+                                    📋 Ver Pedidos
+                                </button>
+                                <button onclick="setAdminView('categories')" class="w-full btn btn-secondary text-left">
+                                    🏷️ Gestionar Categorías
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderProductsView() {
+            return `
+                <div class="space-y-6">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h4 class="text-2xl font-bold gradient-text">Gestión de Productos</h4>
+                            <p class="text-gray-600">Administra todos los productos de tu plataforma</p>
+                        </div>
+                        <button onclick="showAddProductForm()" class="btn btn-primary">
+                            ➕ Agregar Producto
+                        </button>
+                    </div>
+                    
+                    <div id="product-form-container" style="display: none;" class="card p-6 mb-6">
+                        ${renderProductForm()}
+                    </div>
+                    
+                    <div class="grid gap-4">
+                        ${appState.products.map(product => `
+                            <div class="card p-6">
+                                <div class="flex justify-between items-start">
+                                    <div class="flex-1">
+                                        <div class="flex items-center gap-4 mb-4">
+                                            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold" style="background: ${product.product_color};">
+                                                ${escapeHtml(product.product_icon)}
+                                            </div>
+                                            <div>
+                                                <h5 class="text-xl font-bold">${escapeHtml(product.product_name)}</h5>
+                                                <span class="badge badge-success">${escapeHtml(product.product_type)}</span>
+                                            </div>
+                                        </div>
+                                        <p class="text-gray-600 mb-4">${escapeHtml(product.product_description)}</p>
+                                        <div class="text-2xl font-bold text-green-600">S/ ${product.product_price.toFixed(2)}</div>
+                                    </div>
+                                    <div class="flex gap-2">
+                                        <button onclick="editProduct('${product.id}')" class="btn btn-secondary">
+                                            ✏️ Editar
+                                        </button>
+                                        <button onclick="deleteProduct('${product.id}')" class="btn bg-red-500 text-white hover:bg-red-600">
+                                            🗑️ Eliminar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderCategoriesView() {
+            return `
+                <div class="space-y-6">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h4 class="text-2xl font-bold gradient-text">Gestión de Categorías</h4>
+                            <p class="text-gray-600">Administra las categorías de productos</p>
+                        </div>
+                        <button onclick="showAddCategoryForm()" class="btn btn-primary">
+                            ➕ Agregar Categoría
+                        </button>
+                    </div>
+                    
+                    <div id="category-form-container" style="display: none;" class="card p-6 mb-6">
+                        <form onsubmit="addCategory(event)" class="space-y-4">
+                            <div>
+                                <label class="form-label">Nombre de la Categoría</label>
+                                <input type="text" id="new-category-name" required class="form-input" placeholder="Ej: gaming, educacion, etc.">
+                            </div>
+                            <div class="flex gap-4">
+                                <button type="button" onclick="hideCategoryForm()" class="btn btn-secondary">Cancelar</button>
+                                <button type="submit" class="btn btn-primary">Agregar Categoría</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        ${appState.categories.map(category => `
+                            <div class="card p-6 text-center">
+                                <div class="w-16 h-16 gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                    <span class="text-white text-2xl">${category === 'streaming' ? '🎬' : category === 'software' ? '💻' : '📦'}</span>
+                                </div>
+                                <h5 class="text-xl font-bold mb-2 capitalize">${escapeHtml(category)}</h5>
+                                <p class="text-gray-600 mb-4">${appState.products.filter(p => p.product_type === category).length} productos</p>
+                                <button onclick="deleteCategory('${category}')" class="btn bg-red-500 text-white hover:bg-red-600">
+                                    🗑️ Eliminar
+                                </button>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderOrdersView() {
+            if (appState.orders.length === 0) {
+                return `
+                    <div class="text-center py-16">
+                        <div class="card max-w-2xl mx-auto p-12">
+                            <div class="w-24 h-24 gradient-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                                <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 7h-3V6a4 4 0 0 0-8 0v1H5a1 1 0 0 0-1 1v11a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V8a1 1 0 0 0-1-1zM10 6a2 2 0 0 1 4 0v1h-4V6zm8 13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V9h2v1a1 1 0 0 0 2 0V9h4v1a1 1 0 0 0 2 0V9h2v10z"/>
+                                </svg>
+                            </div>
+                            <h5 class="text-2xl font-bold text-gray-700 mb-4">No hay pedidos registrados</h5>
+                            <p class="text-gray-500 text-lg">Los pedidos aparecerán aquí cuando los clientes realicen compras</p>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            return `
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="text-2xl font-bold gradient-text mb-4">Historial de Pedidos</h4>
+                        <p class="text-gray-600">Gestiona y revisa todos los pedidos realizados</p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        ${appState.orders.map(order => {
+                            const priceInfo = formatPrice(order.total_price);
+                            const orderDate = new Date(order.created_at);
+                            
+                            return `
+                                <div class="card p-6">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div class="flex-1">
+                                            <h5 class="text-xl font-bold text-gray-800 mb-1">${escapeHtml(order.product_name)}</h5>
+                                            <p class="text-gray-600 text-sm mb-1">Pedido #${escapeHtml(order.id)}</p>
+                                            <p class="text-sm text-gray-500">Cliente: ${escapeHtml(order.customer_name)}</p>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <div class="text-right">
+                                                <div class="text-2xl font-black text-green-600">${priceInfo.pen}</div>
+                                                <div class="text-xs text-gray-500">${priceInfo.usd} USD</div>
+                                            </div>
+                                            <button onclick="deleteOrder('${order.id}')" 
+                                                    class="p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors flex-shrink-0"
+                                                    title="Eliminar pedido">
+                                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+                                        <div>
+                                            <p class="text-xs text-gray-600 font-medium">Teléfono</p>
+                                            <p class="font-semibold text-sm text-gray-800">${escapeHtml(order.customer_phone)}</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-gray-600 font-medium">Perfil</p>
+                                            <p class="font-semibold text-sm text-gray-800">${escapeHtml(order.profile_name)}</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-gray-600 font-medium">Cantidad</p>
+                                            <p class="font-semibold text-sm text-gray-800">${order.quantity} unidad${order.quantity > 1 ? 'es' : ''}</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-gray-600 font-medium">Fecha</p>
+                                            <p class="font-semibold text-sm text-gray-800">${orderDate.toLocaleDateString('es-ES', { 
+                                                day: '2-digit', 
+                                                month: '2-digit', 
+                                                year: 'numeric' 
+                                            })}</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex justify-between items-center pt-4 border-t border-gray-200">
+                                        <span class="badge badge-success">
+                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                            Confirmado
+                                        </span>
+                                        <div class="text-xs text-gray-500">
+                                            ${orderDate.toLocaleTimeString('es-ES', { 
+                                                hour: '2-digit', 
+                                                minute: '2-digit' 
+                                            })}
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderSettingsView() {
+            return `
+                <div class="space-y-8">
+                    <div>
+                        <h4 class="text-2xl font-bold gradient-text mb-4">Configuración General</h4>
+                        <p class="text-gray-600">Ajusta la configuración de tu plataforma</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="card p-6">
+                            <h5 class="text-xl font-bold mb-4">Configuración de Precios</h5>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="form-label">Tipo de Cambio (PEN/USD)</label>
+                                    <input type="number" step="0.01" value="${appState.exchangeRate}" 
+                                           onchange="updateExchangeRate(this.value)" class="form-input">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card p-6">
+                            <h5 class="text-xl font-bold mb-4">Estadísticas</h5>
+                            <div class="space-y-3">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Total Productos:</span>
+                                    <span class="font-bold">${appState.products.length}</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Total Pedidos:</span>
+                                    <span class="font-bold">${appState.orders.length}</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Categorías:</span>
+                                    <span class="font-bold">${appState.categories.length}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card p-6">
+                        <h5 class="text-xl font-bold mb-4 text-red-600">Zona de Peligro</h5>
+                        <p class="text-gray-600 mb-4">Estas acciones no se pueden deshacer</p>
+                        <div class="space-y-3">
+                            <button onclick="clearAllOrders()" class="btn bg-red-500 text-white hover:bg-red-600">
+                                🗑️ Limpiar Todos los Pedidos
+                            </button>
+                            <button onclick="resetToDefaults()" class="btn bg-red-500 text-white hover:bg-red-600">
+                                🔄 Restaurar Productos por Defecto
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Render Functions
+        function renderProducts() {
+            const streamingContainer = document.getElementById('streaming-products');
+            const softwareContainer = document.getElementById('software-products');
+            
+            if (!streamingContainer || !softwareContainer) return;
+            
+            const streamingProducts = appState.products.filter(p => p.product_type === 'streaming');
+            const softwareProducts = appState.products.filter(p => p.product_type === 'software');
+            
+            streamingContainer.innerHTML = streamingProducts.map(product => {
+                const priceInfo = formatPrice(product.product_price);
+                return `
+                    <div class="product-card">
+                        <div class="product-icon" style="background: ${product.product_color};">
+                            ${escapeHtml(product.product_icon)}
+                        </div>
+                        <h4 class="text-2xl font-bold mb-3">${escapeHtml(product.product_name)}</h4>
+                        <p class="text-gray-600 mb-4">${escapeHtml(product.product_description)}</p>
+                        <div class="price-display">${priceInfo.pen}</div>
+                        <div class="text-sm text-gray-500 mb-6">${priceInfo.usd} USD</div>
+                        ${product.product_badges ? `
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                ${product.product_badges.split(',').map(badge => `
+                                    <span class="badge badge-success">${escapeHtml(badge.trim())}</span>
+                                `).join('')}
+                            </div>
+                        ` : ''}
+                        <button onclick="openPurchaseModal('${escapeHtml(product.product_type)}', '${escapeHtml(product.product_name)}', ${product.product_price})" 
+                                class="w-full btn btn-primary">
+                            🛒 Comprar Ahora
+                        </button>
+                    </div>
+                `;
+            }).join('');
+            
+            softwareContainer.innerHTML = softwareProducts.map(product => {
+                const priceInfo = formatPrice(product.product_price);
+                return `
+                    <div class="product-card">
+                        <div class="product-icon" style="background: ${product.product_color};">
+                            ${escapeHtml(product.product_icon)}
+                        </div>
+                        <h4 class="text-2xl font-bold mb-3">${escapeHtml(product.product_name)}</h4>
+                        <p class="text-gray-600 mb-4">${escapeHtml(product.product_description)}</p>
+                        <div class="price-display">${priceInfo.pen}</div>
+                        <div class="text-sm text-gray-500 mb-6">${priceInfo.usd} USD</div>
+                        ${product.product_badges ? `
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                ${product.product_badges.split(',').map(badge => `
+                                    <span class="badge badge-success">${escapeHtml(badge.trim())}</span>
+                                `).join('')}
+                            </div>
+                        ` : ''}
+                        <button onclick="openPurchaseModal('${escapeHtml(product.product_type)}', '${escapeHtml(product.product_name)}', ${product.product_price})" 
+                                class="w-full btn btn-primary">
+                            🛒 Comprar Ahora
+                        </button>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Initialize Element SDK
+        async function initializeElementSDK() {
+            try {
+                if (window.elementSdk) {
+                    await window.elementSdk.init({
+                        defaultConfig,
+                        onConfigChange,
+                        mapToCapabilities,
+                        mapToEditPanelValues
+                    });
+                }
+            } catch (error) {
+                console.log('Element SDK not available, using default config');
+            }
+            
+            // Initial render
+            await onConfigChange(defaultConfig);
+        }
+
+        // Event Listeners
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                // Close modals on Escape key
+                const purchaseModal = document.getElementById('purchase-modal');
+                const adminModal = document.getElementById('admin-modal');
+                const confirmationDialog = document.getElementById('confirmation-dialog');
+                
+                if (purchaseModal && !purchaseModal.classList.contains('hidden')) {
+                    closePurchaseModal();
+                } else if (adminModal && !adminModal.classList.contains('hidden')) {
+                    closeAdminPanel();
+                } else if (confirmationDialog && !confirmationDialog.classList.contains('hidden')) {
+                    cancelConfirmation();
+                }
+            }
+        });
+
+        // Initialize Application
+        document.addEventListener('DOMContentLoaded', async function() {
+            try {
+                await initializeElementSDK();
+                renderProducts();
+                
+                console.log('StreamLicenses Pro Enhanced - Plataforma optimizada inicializada correctamente!');
+            } catch (error) {
+                console.error('Error initializing application:', error);
+                showToast('Error al inicializar la aplicación', 'error');
+            }
+        });
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'993a56fef3926df1',t:'MTc2MTMxNzk4NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
